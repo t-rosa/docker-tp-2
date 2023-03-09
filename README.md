@@ -19,3 +19,9 @@ Pour les versions plus anciennes, l'option "--production" est disponnible
 - Quelle bonne pratique Docker permet t-elle de respecter ?
 
 Cela permet de construire une image minimale avec uniquement le nécéssaire ce qui fait écho à une des bonnes pratiques concernant docker qui est : "Keep your images small".
+
+- A l’aide de la commande docker build, créer l’image ma_super_app
+
+```bash
+docker build -t ma_super_app .
+```
