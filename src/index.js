@@ -9,14 +9,14 @@ const HOST = '0.0.0.0';
 const app = express();
 app.get('/', (req, res) => {
   var connection = mysql.createConnection({
-    host: process.env.DATABASE_HOST || '0.0.0.0' ,
+    host: process.env.DATABASE_HOST || '0.0.0.0',
     port: process.env.DATABASE_PORT || 3306,
     user: process.env.DATABASE_USERNAME,
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE_NAME,
   })
 
-  connection.connect(function (error) {
+  connection.connect(function(error) {
     if (error) {
       console.log("Connection to MySQL failed.");
       throw error
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
   });
 
   const query = 'SELECT SUM(1+1) as sum'
-  connection.query(query, function (error, result) {
+  connection.query(query, function(error, result) {
     if (error) throw error;
     res.send(`'${query}' => ${result[0].sum}`);
   });
